@@ -1,0 +1,34 @@
+# Runtime dependencies
+node_modules/
+
+# Build output
+lib/
+dist/
+.build/**
+!.build/.gitignore
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Caches
+.npm
+.eslintcache
+
+# Dotenv environment variables file
+.env
+.env.test
+
+# Mac files
+**/.DS_Store
+
+# SAM build files
+.aws-sam
+build.toml
+
+# Coverage html files
+coverage/
