@@ -1,4 +1,4 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package tutorial;
 
@@ -12,8 +12,8 @@ message Person {
   }
 
   message PhoneNumber {
-    optional string number = 1;
-    optional PhoneType type = 2 [default = HOME];
+    optional string phoneNumber = 1;
+    optional PhoneType phoneType = 2;
   }
 
   repeated PhoneNumber phones = 2;

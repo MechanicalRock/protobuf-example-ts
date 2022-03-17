@@ -1,11 +1,11 @@
 /* eslint-disable */
-import { util, configure, Writer, Reader } from 'protobufjs/minimal'
-import * as Long from 'long'
+import Long from 'long'
+import _m0 from 'protobufjs/minimal'
 
 export const protobufPackage = 'tutorial'
 
 export interface Person {
-  name: string
+  name?: string | undefined
   phones: Person_PhoneNumber[]
 }
 
@@ -48,8 +48,8 @@ export function person_PhoneTypeToJSON(object: Person_PhoneType): string {
 }
 
 export interface Person_PhoneNumber {
-  number: string
-  type: Person_PhoneType
+  phoneNumber?: string | undefined
+  phoneType?: Person_PhoneType | undefined
 }
 
 export interface AddressBook {
@@ -57,12 +57,12 @@ export interface AddressBook {
 }
 
 function createBasePerson(): Person {
-  return { name: '', phones: [] }
+  return { name: undefined, phones: [] }
 }
 
 export const Person = {
-  encode(message: Person, writer: Writer = Writer.create()): Writer {
-    if (message.name !== '') {
+  encode(message: Person, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+    if (message.name !== undefined) {
       writer.uint32(10).string(message.name)
     }
     for (const v of message.phones) {
@@ -71,8 +71,8 @@ export const Person = {
     return writer
   },
 
-  decode(input: Reader | Uint8Array, length?: number): Person {
-    const reader = input instanceof Reader ? input : new Reader(input)
+  decode(input: _m0.Reader | Uint8Array, length?: number): Person {
+    const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input)
     let end = length === undefined ? reader.len : reader.pos + length
     const message = createBasePerson()
     while (reader.pos < end) {
@@ -94,7 +94,7 @@ export const Person = {
 
   fromJSON(object: any): Person {
     return {
-      name: isSet(object.name) ? String(object.name) : '',
+      name: isSet(object.name) ? String(object.name) : undefined,
       phones: Array.isArray(object?.phones) ? object.phones.map((e: any) => Person_PhoneNumber.fromJSON(e)) : []
     }
   },
@@ -112,39 +112,39 @@ export const Person = {
 
   fromPartial<I extends Exact<DeepPartial<Person>, I>>(object: I): Person {
     const message = createBasePerson()
-    message.name = object.name ?? ''
+    message.name = object.name ?? undefined
     message.phones = object.phones?.map((e) => Person_PhoneNumber.fromPartial(e)) || []
     return message
   }
 }
 
 function createBasePerson_PhoneNumber(): Person_PhoneNumber {
-  return { number: '', type: 0 }
+  return { phoneNumber: undefined, phoneType: undefined }
 }
 
 export const Person_PhoneNumber = {
-  encode(message: Person_PhoneNumber, writer: Writer = Writer.create()): Writer {
-    if (message.number !== '') {
-      writer.uint32(10).string(message.number)
+  encode(message: Person_PhoneNumber, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+    if (message.phoneNumber !== undefined) {
+      writer.uint32(10).string(message.phoneNumber)
     }
-    if (message.type !== 0) {
-      writer.uint32(16).int32(message.type)
+    if (message.phoneType !== undefined) {
+      writer.uint32(16).int32(message.phoneType)
     }
     return writer
   },
 
-  decode(input: Reader | Uint8Array, length?: number): Person_PhoneNumber {
-    const reader = input instanceof Reader ? input : new Reader(input)
+  decode(input: _m0.Reader | Uint8Array, length?: number): Person_PhoneNumber {
+    const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input)
     let end = length === undefined ? reader.len : reader.pos + length
     const message = createBasePerson_PhoneNumber()
     while (reader.pos < end) {
       const tag = reader.uint32()
       switch (tag >>> 3) {
         case 1:
-          message.number = reader.string()
+          message.phoneNumber = reader.string()
           break
         case 2:
-          message.type = reader.int32() as any
+          message.phoneType = reader.int32() as any
           break
         default:
           reader.skipType(tag & 7)
@@ -156,22 +156,23 @@ export const Person_PhoneNumber = {
 
   fromJSON(object: any): Person_PhoneNumber {
     return {
-      number: isSet(object.number) ? String(object.number) : '',
-      type: isSet(object.type) ? person_PhoneTypeFromJSON(object.type) : 0
+      phoneNumber: isSet(object.phoneNumber) ? String(object.phoneNumber) : undefined,
+      phoneType: isSet(object.phoneType) ? person_PhoneTypeFromJSON(object.phoneType) : undefined
     }
   },
 
   toJSON(message: Person_PhoneNumber): unknown {
     const obj: any = {}
-    message.number !== undefined && (obj.number = message.number)
-    message.type !== undefined && (obj.type = person_PhoneTypeToJSON(message.type))
+    message.phoneNumber !== undefined && (obj.phoneNumber = message.phoneNumber)
+    message.phoneType !== undefined &&
+      (obj.phoneType = message.phoneType !== undefined ? person_PhoneTypeToJSON(message.phoneType) : undefined)
     return obj
   },
 
   fromPartial<I extends Exact<DeepPartial<Person_PhoneNumber>, I>>(object: I): Person_PhoneNumber {
     const message = createBasePerson_PhoneNumber()
-    message.number = object.number ?? ''
-    message.type = object.type ?? 0
+    message.phoneNumber = object.phoneNumber ?? undefined
+    message.phoneType = object.phoneType ?? undefined
     return message
   }
 }
@@ -181,15 +182,15 @@ function createBaseAddressBook(): AddressBook {
 }
 
 export const AddressBook = {
-  encode(message: AddressBook, writer: Writer = Writer.create()): Writer {
+  encode(message: AddressBook, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     for (const v of message.people) {
       Person.encode(v!, writer.uint32(10).fork()).ldelim()
     }
     return writer
   },
 
-  decode(input: Reader | Uint8Array, length?: number): AddressBook {
-    const reader = input instanceof Reader ? input : new Reader(input)
+  decode(input: _m0.Reader | Uint8Array, length?: number): AddressBook {
+    const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input)
     let end = length === undefined ? reader.len : reader.pos + length
     const message = createBaseAddressBook()
     while (reader.pos < end) {
@@ -246,11 +247,9 @@ export type Exact<P, I extends P> = P extends Builtin
   ? P
   : P & { [K in keyof P]: Exact<P[K], I[K]> } & Record<Exclude<keyof I, KeysOfUnion<P>>, never>
 
-// If you get a compile-error about 'Constructor<Long> and ... have no overlap',
-// add '--ts_proto_opt=esModuleInterop=true' as a flag when calling 'protoc'.
-if (util.Long !== Long) {
-  util.Long = Long as any
-  configure()
+if (_m0.util.Long !== Long) {
+  _m0.util.Long = Long as any
+  _m0.configure()
 }
 
 function isSet(value: any): boolean {

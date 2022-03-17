@@ -1,27 +1,23 @@
-import {
-  deserializeProtoToMsg,
-  newAddressBookMsg,
-  serializeMsgToProto
-} from '../../src/using-ts-protoc-gen/addressBook'
+import { newAddressBookMsg, serializeMsgToProto, deserializeProtoToMsg } from '../src/addressBook'
 
 describe('serialize and deserialize protobuf message', () => {
   const expectedAddressBookMsg = {
-    peopleList: [
+    people: [
       {
         name: 'Joe Blogs',
-        phonesList: [
+        phones: [
           {
-            number: '0123456789',
-            type: 0
+            phoneNumber: '0123456789',
+            phoneType: 0
           }
         ]
       },
       {
         name: 'Jane Smith',
-        phonesList: [
+        phones: [
           {
-            number: '0987654321',
-            type: 1
+            phoneNumber: '0987654321',
+            phoneType: 1
           }
         ]
       }
@@ -30,22 +26,21 @@ describe('serialize and deserialize protobuf message', () => {
 
   it('should generate the expected AddressBook Message', () => {
     const addressBook = newAddressBookMsg()
-    console.log(JSON.stringify(addressBook.toObject(), null, 2))
+    console.log(JSON.stringify(addressBook, null, 2))
 
-    expect(addressBook.toObject()).toEqual(expectedAddressBookMsg)
+    expect(addressBook).toEqual(expectedAddressBookMsg)
   })
 
   it('should serialize to a protobuf and then deserialize to the same AddressBook message', () => {
     const addressBook = newAddressBookMsg()
-    expect(addressBook.toObject()).toEqual(expectedAddressBookMsg)
+    expect(addressBook).toEqual(expectedAddressBookMsg)
 
     const proto = serializeMsgToProto(addressBook)
     console.log(proto)
 
     const deserializedProto = deserializeProtoToMsg(proto)
     console.log(JSON.stringify(deserializedProto, null, 2))
-    console.log(JSON.stringify(deserializedProto.toObject(), null, 2))
 
-    expect(deserializedProto.toObject()).toEqual(expectedAddressBookMsg)
+    expect(deserializedProto).toEqual(expectedAddressBookMsg)
   })
 })
