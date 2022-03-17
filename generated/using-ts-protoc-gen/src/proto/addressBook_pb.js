@@ -94,7 +94,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.tutorial.Person.repeatedFields_ = [4];
+proto.tutorial.Person.repeatedFields_ = [2];
 
 
 
@@ -128,8 +128,6 @@ proto.tutorial.Person.prototype.toObject = function(opt_includeInstance) {
 proto.tutorial.Person.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    id: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    email: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     phonesList: jspb.Message.toObjectList(msg.getPhonesList(),
     proto.tutorial.Person.PhoneNumber.toObject, includeInstance)
   };
@@ -173,14 +171,6 @@ proto.tutorial.Person.deserializeBinaryFromReader = function(msg, reader) {
       msg.setName(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
-      break;
-    case 4:
       var value = new proto.tutorial.Person.PhoneNumber;
       reader.readMessage(value,proto.tutorial.Person.PhoneNumber.deserializeBinaryFromReader);
       msg.addPhones(value);
@@ -221,24 +211,10 @@ proto.tutorial.Person.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeInt32(
-      2,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getPhonesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      4,
+      2,
       f,
       proto.tutorial.Person.PhoneNumber.serializeBinaryToWriter
     );
@@ -488,84 +464,12 @@ proto.tutorial.Person.prototype.hasName = function() {
 
 
 /**
- * optional int32 id = 2;
- * @return {number}
- */
-proto.tutorial.Person.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.tutorial.Person} returns this
- */
-proto.tutorial.Person.prototype.setId = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.tutorial.Person} returns this
- */
-proto.tutorial.Person.prototype.clearId = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.tutorial.Person.prototype.hasId = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string email = 3;
- * @return {string}
- */
-proto.tutorial.Person.prototype.getEmail = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.tutorial.Person} returns this
- */
-proto.tutorial.Person.prototype.setEmail = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.tutorial.Person} returns this
- */
-proto.tutorial.Person.prototype.clearEmail = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.tutorial.Person.prototype.hasEmail = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * repeated PhoneNumber phones = 4;
+ * repeated PhoneNumber phones = 2;
  * @return {!Array<!proto.tutorial.Person.PhoneNumber>}
  */
 proto.tutorial.Person.prototype.getPhonesList = function() {
   return /** @type{!Array<!proto.tutorial.Person.PhoneNumber>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.tutorial.Person.PhoneNumber, 4));
+    jspb.Message.getRepeatedWrapperField(this, proto.tutorial.Person.PhoneNumber, 2));
 };
 
 
@@ -574,7 +478,7 @@ proto.tutorial.Person.prototype.getPhonesList = function() {
  * @return {!proto.tutorial.Person} returns this
 */
 proto.tutorial.Person.prototype.setPhonesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -584,7 +488,7 @@ proto.tutorial.Person.prototype.setPhonesList = function(value) {
  * @return {!proto.tutorial.Person.PhoneNumber}
  */
 proto.tutorial.Person.prototype.addPhones = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.tutorial.Person.PhoneNumber, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.tutorial.Person.PhoneNumber, opt_index);
 };
 
 

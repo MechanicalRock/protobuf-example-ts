@@ -24,7 +24,8 @@
     "prettier.tabWidth": 2,
     "redhat.telemetry.enabled": false,
     "cSpell.words": [
-        "protobuf"
+        "protobuf",
+        "protoc"
     ],
     "editor.tabSize": 2,
     "cSpell.language": "en-GB"

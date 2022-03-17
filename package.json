@@ -5,20 +5,16 @@
   "directories": {
     "test": "test"
   },
-  "author": "",
+  "author": "Ed Newsom (at) Mechanical Rock .io",
   "license": "",
   "scripts": {
     "test": "jest",
-    "test:watch": "npm run test -- --watch",
-    "test:integration": "npm run test -- --testMatch='**/*.test.integration.{ts,tsx}'",
-    "test:accept": "npm run test  -- --testMatch='**/*.test.accept.{ts,tsx}' -i",
-    "lint": "npx eslint ./src ./test --ext .ts",
     "test:coverage": "npm run test -- --coverage",
-    "clean": "rm -Rf ./lib/*",
-    "build": "npm run clean && tsc && echo 'tsc complete'"
+    "lint": "npx eslint ./src ./test --ext .ts"
   },
   "dependencies": {
     "google-protobuf": "^3.19.4",
+    "ts-proto": "^1.110.0",
     "ts-protoc-gen": "^0.15.0"
   },
   "devDependencies": {
@@ -32,7 +28,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
     "jest": "^27.5.1",
-    "jest-cucumber": "^3.0.1",
     "ts-jest": "^27.1.3",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.5.0",

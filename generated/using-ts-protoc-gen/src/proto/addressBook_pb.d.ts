@@ -9,16 +9,6 @@ export class Person extends jspb.Message {
   getName(): string | undefined;
   setName(value: string): void;
 
-  hasId(): boolean;
-  clearId(): void;
-  getId(): number | undefined;
-  setId(value: number): void;
-
-  hasEmail(): boolean;
-  clearEmail(): void;
-  getEmail(): string | undefined;
-  setEmail(value: string): void;
-
   clearPhonesList(): void;
   getPhonesList(): Array<Person.PhoneNumber>;
   setPhonesList(value: Array<Person.PhoneNumber>): void;
@@ -37,8 +27,6 @@ export class Person extends jspb.Message {
 export namespace Person {
   export type AsObject = {
     name?: string,
-    id?: number,
-    email?: string,
     phonesList: Array<Person.PhoneNumber.AsObject>,
   }
 

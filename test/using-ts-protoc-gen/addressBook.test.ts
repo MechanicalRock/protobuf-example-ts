@@ -1,12 +1,29 @@
-import { deserializeProtoToMsg, newAddressBookMsg, serializeMsgToProto } from '../src/addressBook'
+import {
+  deserializeProtoToMsg,
+  newAddressBookMsg,
+  serializeMsgToProto
+} from '../../src/using-ts-protoc-gen/addressBook'
 
 describe('serialize and deserialize protobuf message', () => {
   const expectedAddressBookMsg = {
     peopleList: [
       {
-        name: 'Mr J Blogs',
-        id: 1234,
-        phonesList: []
+        name: 'Joe Blogs',
+        phonesList: [
+          {
+            number: '0123456789',
+            type: 0
+          }
+        ]
+      },
+      {
+        name: 'Jane Smith',
+        phonesList: [
+          {
+            number: '0987654321',
+            type: 1
+          }
+        ]
       }
     ]
   }
@@ -26,6 +43,7 @@ describe('serialize and deserialize protobuf message', () => {
     console.log(proto)
 
     const deserializedProto = deserializeProtoToMsg(proto)
+    console.log(JSON.stringify(deserializedProto, null, 2))
     console.log(JSON.stringify(deserializedProto.toObject(), null, 2))
 
     expect(deserializedProto.toObject()).toEqual(expectedAddressBookMsg)
