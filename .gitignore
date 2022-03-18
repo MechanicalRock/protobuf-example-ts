@@ -36,3 +36,6 @@ coverage/
 # Excluding genrated protos to allow following of blog post
 **/generated/**
 !**/generated/.gitignore
+
+.vscode/
+.prettierrc.js
