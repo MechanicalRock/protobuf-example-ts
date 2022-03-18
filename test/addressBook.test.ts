@@ -1,4 +1,4 @@
-import { newAddressBookMsg, serializeMsgToProto, deserializeProtoToMsg } from '../src/addressBook'
+import { newAddressBookMsg, serializeMsgToProto, deserializeProtoToMsg } from '../src/addressBookMessage'
 
 describe('serialize and deserialize protobuf message', () => {
   const expectedAddressBookMsg = {
@@ -38,9 +38,9 @@ describe('serialize and deserialize protobuf message', () => {
     const proto = serializeMsgToProto(addressBook)
     console.log(proto)
 
-    const deserializedProto = deserializeProtoToMsg(proto)
-    console.log(JSON.stringify(deserializedProto, null, 2))
+    const deSerializedMessage = deserializeProtoToMsg(proto)
+    console.log(JSON.stringify(deSerializedMessage, null, 2))
 
-    expect(deserializedProto).toEqual(expectedAddressBookMsg)
+    expect(deSerializedMessage).toEqual(expectedAddressBookMsg)
   })
 })
