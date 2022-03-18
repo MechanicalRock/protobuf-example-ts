@@ -32,3 +32,6 @@ build.toml
 
 # Coverage html files
 coverage/
+
+# Excluding genrated protos to allow following of blog post
+generated/
