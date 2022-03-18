@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Typescript tutorial for Protobuf",
   "author": "Ed Newsom (at) Mechanical Rock .io",
-  "license": "UPDATE THIS ONCE CONFIRMED",
+  "license": "UPDATE THIS ONCE CONFIRMED ",
   "main": "src/addressBook.ts",
   "repository": {
     "type": "git",

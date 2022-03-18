@@ -6,3 +6,7 @@ See Mechanical Rock blog post [Protobufs for TypeScript]()
 2) Run `npm install`
 2) Run `./compileProtos.sh`
 3) Run `npm run test`
+
+## TODO
+1) Update link to post above once posted
+2) Update licence in package.json once confirmed
