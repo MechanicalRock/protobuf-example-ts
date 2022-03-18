@@ -1,12 +1,28 @@
 {
-  "name": "protobuf-tutorial-ts",
+  "name": "protobuf-example-ts",
   "version": "1.0.0",
   "description": "Typescript tutorial for Protobuf",
-  "directories": {
-    "test": "test"
-  },
   "author": "Ed Newsom (at) Mechanical Rock .io",
-  "license": "",
+  "license": "UPDATE THIS ONCE CONFIRMED",
+  "main": "src/addressBook.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MechanicalRock/protobuf-example-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MechanicalRock/protobuf-example-ts/issues"
+  },
+  "homepage": "https://github.com/MechanicalRock/protobuf-example-ts#readme",
+  "keywords": [
+    "mechanical rock",
+    "protobuf",
+    "google-protobuf",
+    "typescript",
+    "tutorial",
+    "protoc",
+    "npm",
+    "ts-proto"
+  ],
   "scripts": {
     "test": "jest",
     "test:coverage": "npm run test -- --coverage",
