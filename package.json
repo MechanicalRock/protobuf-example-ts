@@ -2,9 +2,9 @@
   "name": "protobuf-example-ts",
   "version": "1.0.0",
   "description": "Typescript tutorial for Protobuf",
-  "author": "Ed Newsom (at) Mechanical Rock .io",
+  "author": "Mechanical Rock",
   "license": "Apache-2.0",
-  "main": "src/addressBook.ts",
+  "main": "src/addressBookMessage.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MechanicalRock/protobuf-example-ts.git"
