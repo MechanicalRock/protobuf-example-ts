@@ -30,6 +30,6 @@ export function serializeMsgToProto(myAddressBook: AddressBook): Uint8Array {
   return AddressBook.encode(myAddressBook).finish()
 }
 
-export function deserializeProtoToMsg(proto: Uint8Array): AddressBook {
-  return AddressBook.decode(proto)
+export function deserializeProtoToMsg(serializedMessage: Uint8Array): AddressBook {
+  return AddressBook.decode(serializedMessage)
 }

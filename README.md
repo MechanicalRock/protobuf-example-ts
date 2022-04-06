@@ -11,6 +11,7 @@ See Mechanical Rock blog post [Protobufs for TypeScript]()
 
 ## TODO
 1) Update link to post above once posted
+2) Make this repo public
 
 
 ## Licence
