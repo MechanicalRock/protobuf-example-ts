@@ -1,5 +1,5 @@
 # Getting Started with Protobufs and Typescript
-See Mechanical Rock blog post [Getting Started with Protobufs and Typescript](https://mechanicalrock.github.io/2022/04/08/getting-started-with-protobufs-and-typescript.html){:target="_blank"}
+See Mechanical Rock blog post [Getting Started with Protobufs and Typescript](https://mechanicalrock.github.io/2022/04/08/getting-started-with-protobufs-and-typescript.html)
 
 ## To use this repository
 1) Install `protoc` as per blog post above
