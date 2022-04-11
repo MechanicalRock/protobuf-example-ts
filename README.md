@@ -1,17 +1,11 @@
 # Getting Started with Protobufs and Typescript
-See Mechanical Rock blog post [Getting Started with Protobufs and Typescript]()
+See Mechanical Rock blog post [Getting Started with Protobufs and Typescript](https://mechanicalrock.github.io/2022/04/08/getting-started-with-protobufs-and-typescript.html){:target="_blank"}
 
 ## To use this repository
 1) Install `protoc` as per blog post above
 2) Run `npm install`
 2) Run `./compileProtos.sh`
 3) Run `npm run test`
-
-
-## TODO
-1) Update link to post above once posted
-2) Make this repo public
-
 
 ## Licence
 Copyright 2022 Mechanical Rock
