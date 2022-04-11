@@ -1,6 +1,5 @@
-# protobuf-tutorial-ts
+# Getting Started with Protobufs and Typescript
 See Mechanical Rock blog post [Protobufs for TypeScript]()
-
 
 ## To use this repository
 1) Install `protoc` as per blog post instructions above

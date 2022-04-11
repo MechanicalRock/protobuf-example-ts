@@ -1,7 +1,7 @@
 {
   "name": "protobuf-example-ts",
   "version": "1.0.0",
-  "description": "Typescript tutorial for Protobuf",
+  "description": "Getting Started with Protobufs and Typescript",
   "author": "Mechanical Rock",
   "license": "Apache-2.0",
   "main": "src/addressBookMessage.ts",
