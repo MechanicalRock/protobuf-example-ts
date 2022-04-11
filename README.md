@@ -1,8 +1,8 @@
 # Getting Started with Protobufs and Typescript
-See Mechanical Rock blog post [Protobufs for TypeScript]()
+See Mechanical Rock blog post [Getting Started with Protobufs and Typescript]()
 
 ## To use this repository
-1) Install `protoc` as per blog post instructions above
+1) Install `protoc` as per blog post above
 2) Run `npm install`
 2) Run `./compileProtos.sh`
 3) Run `npm run test`
