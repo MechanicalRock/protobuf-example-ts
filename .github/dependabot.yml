@@ -1,0 +1,27 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    # Workflow files stored in the default location of `.github/workflows`. (You don't need to specify `/.github/workflows` for `directory`. You can use `directory: "/"`.)
+    directory: "/"
+    schedule:
+      interval: weekly
+      timezone: "Australia/Perth"
+      time: "09:00"
+    open-pull-requests-limit: 1
+    reviewers:
+      # Add code owners as reviewers
+      - "ednmechrock"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: weekly
+      timezone: "Australia/Perth"
+      time: "09:00"
+    open-pull-requests-limit: 1
+    reviewers:
+      # Add code owners as reviewers
+      - "ednmechrock"
+    allow:
+      # Allow only direct dependency updates (indirect updates may break direct dependencies)
+      - dependency-type: "direct"
